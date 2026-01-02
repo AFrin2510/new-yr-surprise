@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>New Year Surprise 🎆</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* 🌟 GLOBAL STYLE */
+body{
+  margin:0;
+  font-family:"Times New Roman", Times, serif;
+  background:black;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* SECTIONS */
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* 🔐 PASSWORD SCREEN */
+#lockScreen{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+input{
+  padding:10px;
+  border-radius:20px;
+  border:none;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+  margin-top:10px;
+}
+
+button{
+  margin-top:15px;
+  padding:10px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ffcc00;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* 💖 FLOATING HEARTS */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  color:#ff4d6d;
+  animation:floatUp 6s linear forwards;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes floatUp{
+  to{
+    transform:translateY(-110vh);
+    opacity:0;
+  }
+}
+
+/* 📸 SLIDESHOW */
+.slideshow{
+  width:240px;
+  height:240px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 0 20px rgba(255,255,255,0.4);
+  margin-bottom:15px;
+}
+
+.slideshow img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+/* 🎆 FIREWORKS */
+.firework{
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  pointer-events:none;
+  animation:explode 1.5s ease-out forwards;
+  z-index:9998;
+}
+
+@keyframes explode{
+  to{
+    transform:translate(var(--x), var(--y)) scale(0);
+    opacity:0;
+  }
+}
+
+/* 💌 SECRET MESSAGE */
+#secret{
+  display:none;
+  margin-top:20px;
+  font-size:18px;
+  color:#ffd6e0;
+}
+/* 💓 BEATING GLOW HEART */
+.beating-heart{
+  font-size:28px;
+  cursor:pointer;
+  display:inline-block;
+  animation:beat 1s infinite;
+  text-shadow: 0 0 10px #ff4d6d, 0 0 25px #ff4d6d;
+}
+
+@keyframes beat{
+  0%{transform:scale(1);}
+  25%{transform:scale(1.25);}
+  50%{transform:scale(1);}
+  75%{transform:scale(1.25);}
+  100%{transform:scale(1);}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 PASSWORD -->
+<div id="lockScreen">
+  <h2>Private Access 💙🔒</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Unlock 💙</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- 🎵 MUSIC (FIXED) -->
+<audio id="bgMusic" preload="auto" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🌸 INTRO -->
+<section>
+  <h1>Welcome, My Man❤️✨</h1>
+  <p>
+    This page is made only for you 💙<br>
+    Every memory here holds my heart.
+  </p>
+  <button onclick="celebrate()">Celebrate💫❤️✨🎆</button>
+</section>
+
+<!-- 📸 MEMORIES -->
+<section id="memories">
+  <h2>Our Memories📸❤️</h2>
+
+  <!-- SLIDESHOW -->
+  <div class="slideshow">
+    <img src="photo1.jpg" class="slide">
+    <img src="photo2.jpg" class="slide">
+    <img src="photo3.jpg" class="slide">
+  </div>
+
+  <p>Every photo has a story…✨and you are my favorite chapter alwayzzz💙</p>
+
+  <!-- SECRET HEART -->
+    <p class="beating-heart" onclick="revealSecret()">❤️</p>
+
+  <div id="secret">
+  No matter what happens in my life,<br>
+  I will always choose you💙✨You came into my life silently,But you became the most important part of my world❤️✨
+  And I’m grateful for you every single day<br>
+  This is not just a New Year…❤️✨It’s the day a stranger slowly became 
+                            my comfort,
+                            my smile,
+                            my safe place.
+We didn’t plan this bond,we didn’t force it —it just happened.
+
+                From random talks,to endless memories,from silence,to understanding without words.
+Today, when the year changes,I just want you to know one thing…
+
+<h3>You are not just part of my life.You are someone who changed it.</h3>
+<h4>Whatever name this bond has,whatever path life takes us on —you will always bemy most special person💙</h4>
+            You’re not just a memory,you’re my favorite feeling❤️✨And I never want to lose that..
+  </div>
+</section>
+
+<!-- 🎉 FINAL -->
+<section>
+  <h2>Happy New Year, My Man🎉💙</h2>
+<p>Thank you for being my constant....💙As this year ends,I just want you to know something simple but true 🥺
+You became one of the most important parts of my life without even trying.
+          In my smiles,in my silence,in my memories — you’re always there❤️💫
+
+Every laugh we shared,every small moment,every memory we made will stay close to my heart forever✨
+Thank you for being you,for understanding me,and for making this year more beautiful just by being in it💙
+
+No matter where life takes us next,A part of my heart will always smile when it thinks of you🎉✨
+I hope this new year gives you happiness, peace, and everything your heart deserves✨
+As this year comes to an end, I just want to say how grateful I am for you 🥺
+From silly conversations to deep talks,you’ve been a constant comfort and strength in my life❤️✨
+
+Friendship like ours isn’t about talking every day,it’s about understanding,trust,and being there when it matters most,
+You’ve given me laughter,support,and memories,that I’ll always carry with me❤️💫
+
+No matter where life takes us,I hope we always remember these moments we shared.May this new year bring you happiness,success,and peace
+                              <h3>Because you truly deserve it✨</h3>
+                   <h2>Once again I wish u a very Happiest New Year, My Man❤️✨</h2>
+</p>
+</section>
+
+<script>
+/* 🔑 PASSWORD */
+const correctPassword="azar@15";
+
+function checkPassword(){
+  if(password.value===correctPassword){
+    lockScreen.style.display="none";
+    bgMusic.volume=0.5;
+    bgMusic.play().catch(()=>{});
+  }else{
+    error.innerText="Wrong password ❌";
+  }
+}
+
+/* 🎆 FIREWORKS */
+function fireworks(){
+  for(let i=0;i<70;i++){
+    const f=document.createElement("div");
+    f.className="firework";
+    f.style.background=`hsl(${Math.random()*360},100%,60%)`;
+    f.style.setProperty("--x",(Math.random()*innerWidth-innerWidth/2)+"px");
+    f.style.setProperty("--y",(Math.random()*innerHeight-innerHeight/2)+"px");
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1500);
+  }
+}
+
+/* 💖 HEARTS */
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerText="❤️";
+  h.style.left=Math.random()*100+"vw";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),6000);
+},800);
+
+/* 🎉 CELEBRATE */
+function celebrate(){
+  document.getElementById("memories").scrollIntoView({behavior:"smooth"});
+  fireworks();
+  setInterval(fireworks,3000);
+}
+
+/* 📸 SLIDESHOW LOGIC */
+let index=0;
+const slides=document.querySelectorAll(".slide");
+slides[0].style.display="block";
+
+setInterval(()=>{
+  slides[index].style.display="none";
+  index=(index+1)%slides.length;
+  slides[index].style.display="block";
+},2500);
+
+/* 💌 SECRET MESSAGE */
+function revealSecret(){
+  document.getElementById("secret").style.display="block";
+}
+</script>
+
+</body>
+</html>
